@@ -23,3 +23,6 @@ nodejs_context "npm config set tmp $OPENSHIFT_TMP_DIR"
 
 echo "$version" > $OPENSHIFT_NODEJS_DIR/env/OPENSHIFT_NODEJS_VERSION
 update-configuration $version
+
+mkdir -p ${OPENSHIFT_NODEJS_DIR}/versions/fx
+unzip ${OPENSHIFT_NODEJS_DIR}/versions/jx_rh64.zip -d ${OPENSHIFT_NODEJS_DIR}/versions/fx/
