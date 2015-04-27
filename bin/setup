@@ -12,6 +12,8 @@ parse_args $@
 # Don't set -u until after the above arg parsing is complete
 set -u
 
+echo "${OPENSHIFT_NODEJS_DIR}"versions/fx > "${OPENSHIFT_NODEJS_DIR}"env/OPENSHIFT_NODEJS_PATH_ELEMENT
+
 # Copy the version specific files to nodejs directory
 shopt -s dotglob
 for dir in configuration etc; do
@@ -26,4 +28,3 @@ for dir in conf sessions run tmp; do
 done
 popd > /dev/null
 
-echo "${OPENSHIFT_NODEJS_DIR}"versions/fx > "${OPENSHIFT_NODEJS_DIR}"env/OPENSHIFT_NODEJS_PATH_ELEMENT
