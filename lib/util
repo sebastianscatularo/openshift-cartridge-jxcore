@@ -40,7 +40,7 @@ function set-configuration {
       ;;
     native)
       rm -f $OPENSHIFT_NODEJS_DIR/env/{LD_LIBRARY_PATH,MANPATH}
-      echo -n "${OPENSHIFT_REPO_DIR}node_modules/.bin/:${OPENSHIFT_HOMEDIR}/.node_modules/.bin" > $OPENSHIFT_NODEJS_DIR/env/OPENSHIFT_NODEJS_PATH_ELEMENT
+      echo -n "${OPENSHIFT_NODEJS_DIR}versions/fx:${OPENSHIFT_REPO_DIR}node_modules/.bin/:${OPENSHIFT_HOMEDIR}/.node_modules/.bin" > $OPENSHIFT_NODEJS_DIR/env/OPENSHIFT_NODEJS_PATH_ELEMENT
       ;;
   esac
 }
