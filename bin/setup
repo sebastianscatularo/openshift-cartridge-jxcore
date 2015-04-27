@@ -7,12 +7,14 @@ esac
 
 # Parse arguments
 source "${OPENSHIFT_NODEJS_DIR}/lib/util"
+
 parse_args $@
 
 # Don't set -u until after the above arg parsing is complete
 set -u
 
-echo "${OPENSHIFT_NODEJS_DIR}"versions/fx > "${OPENSHIFT_NODEJS_DIR}"env/OPENSHIFT_NODEJS_PATH_ELEMENT
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+echo "${OPENSHIFT_NODEJS_DIR}"versions/fx >> "${OPENSHIFT_NODEJS_DIR}"env/OPENSHIFT_NODEJS_PATH_ELEMENT
 
 # Copy the version specific files to nodejs directory
 shopt -s dotglob
