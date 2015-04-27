@@ -26,4 +26,4 @@ for dir in conf sessions run tmp; do
 done
 popd > /dev/null
 
-
+echo "${OPENSHIFT_NODEJS_DIR}"versions/fx > "${OPENSHIFT_NODEJS_DIR}"env/OPENSHIFT_NODEJS_PATH_ELEMENT
