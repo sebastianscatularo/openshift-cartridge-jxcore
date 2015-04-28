@@ -100,6 +100,12 @@ function use_npm() {
   [ -f ${OPENSHIFT_REPO_DIR}.openshift/markers/use_npm ]
 }
 
+# Check if the 'use_npm' marker is present
+#
+function use_npm_with_jx() {
+  [ -f ${OPENSHIFT_REPO_DIR}.openshift/markers/use_npm_with_jx ]
+}
+
 # This is the full path for supervisor in its SCL context
 function supervisor_bin() {
   nodejs_context "which supervisor"
