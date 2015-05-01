@@ -7,8 +7,12 @@
 function nodejs_context {
   case "$OPENSHIFT_NODEJS_VERSION" in
     0.6)  eval $1 ;;
-    0.10) "$OPENSHIFT_NODEJS_DIR"versions/jx/jx "$1" ;;
+    0.10) /usr/bin/scl enable v8314 nodejs010 "$1" ;;
   esac
+}
+
+function jxcore_context {
+  "$OPENSHIFT_NODEJS_DIR"versions/jx/jx "$1"
 }
 
 function update-configuration {
